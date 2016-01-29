@@ -178,4 +178,5 @@ tramp
 # elpa packages
 /elpa/
 
-
+# IntelliJ
+*.iml
