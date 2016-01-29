@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ESRI (legacy)</string>
+
+    <string name="layerLeisure27700">Leisure (BNG)</string>
+    <string name="layerLight">Light</string>
+    <string name="layerLight27700">Light (BNG)</string>
+    <string name="layerNight">Night</string>
+    <string name="layerNight27700">Night (BNG)</string>
+    <string name="layerOutdoor">Outdoor</string>
+    <string name="layerOutdoor27700">Outdoor (BNG)</string>
+    <string name="layerRoad">Road</string>
+    <string name="layerRoad27700">Road (BNG)</string>
+
+    <string name="os_api_key"></string>
+</resources>

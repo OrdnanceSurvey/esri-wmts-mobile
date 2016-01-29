@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/layer_light"
+        android:showAsAction="never"
+        android:title="@string/layerLight" />
+
+    <item
+        android:id="@+id/layer_light_27700"
+        android:showAsAction="never"
+        android:title="@string/layerLight27700" />
+
+    <item
+        android:id="@+id/layer_night"
+        android:showAsAction="never"
+        android:title="@string/layerNight" />
+
+    <item
+        android:id="@+id/layer_night_27700"
+        android:showAsAction="never"
+        android:title="@string/layerNight27700" />
+
+    <item
+        android:id="@+id/layer_outdoor"
+        android:showAsAction="never"
+        android:title="@string/layerOutdoor" />
+
+    <item
+        android:id="@+id/layer_outdoor_27700"
+        android:showAsAction="never"
+        android:title="@string/layerOutdoor27700" />
+
+    <item
+        android:id="@+id/layer_road"
+        android:showAsAction="never"
+        android:title="@string/layerRoad" />
+
+    <item
+        android:id="@+id/layer_road_27700"
+        android:showAsAction="never"
+        android:title="@string/layerRoad27700" />
+
+    <item
+        android:id="@+id/layer_leisure_27700"
+        android:showAsAction="never"
+        android:title="@string/layerLeisure27700" />
+
+</menu>
