@@ -12,6 +12,7 @@
 @interface ViewController ()<AGSMapViewLayerDelegate, AGSWMTSInfoDelegate>
 
 @property (weak, nonatomic) IBOutlet AGSMapView *mapView;
+@property (nonatomic, strong) AGSWMTSInfo *wmtsInfo;
 
 @end
 
@@ -26,8 +27,9 @@
     NSString *apiKey = self.apiKey;
     NSString *wmtsPath = [NSString stringWithFormat:@"%@?key=%@", basePath, apiKey];
     NSURL *wmtsURL = [NSURL URLWithString:wmtsPath];
-    AGSWMTSInfo *wmtsInfo = [[AGSWMTSInfo alloc] initWithURL:wmtsURL];
-    wmtsInfo.delegate = self;
+    //NSURL *wmtsURL = [NSURL URLWithString:@"https://map.bgs.ac.uk/arcgis/rest/services/GeologyOfBritain/WilliamSmithMap/MapServer/WMTS"];
+    self.wmtsInfo = [[AGSWMTSInfo alloc] initWithURL:wmtsURL];
+    self.wmtsInfo.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -45,23 +47,24 @@
 
 - (void)mapViewDidLoad:(AGSMapView *)mapView {
     [self.mapView.locationDisplay startDataSource];
-    self.mapView.locationDisplay.autoPanMode =
-        AGSLocationDisplayAutoPanModeDefault;
+    self.mapView.locationDisplay.autoPanMode = AGSLocationDisplayAutoPanModeDefault;
 }
 
 #pragma mark - AGSWMTSInfoDelegate
 
 - (void)wmtsInfoDidLoad:(AGSWMTSInfo *)wmtsInfo {
-    NSLog(@"%@", wmtsInfo);
-
     NSArray *layerInfos = [wmtsInfo layerInfos];
-    AGSWMTSLayerInfo *layerInfo = [layerInfos objectAtIndex:0];
+
+    // Fully populated, available layers from the OS mapping backend:
+    // 1 - 27700 roads
+    // 4 - 3857 outdoor
+    AGSWMTSLayerInfo *layerInfo = layerInfos[0];
     AGSWMTSLayer *wmtsLayer = [wmtsInfo wmtsLayerWithLayerInfo:layerInfo andSpatialReference:nil];
     [self.mapView addMapLayer:wmtsLayer withName:@"wmts layer"];
 }
 
 - (void)wmtsInfo:(AGSWMTSInfo *)wmtsInfo didFailToLoad:(NSError *)error {
-    NSLog(@"WMTS Failed to load");
+    NSLog(@"WMTS info failed to load");
 }
 
 @end
