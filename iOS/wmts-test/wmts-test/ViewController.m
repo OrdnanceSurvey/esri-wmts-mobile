@@ -58,7 +58,7 @@
     // Fully populated, available layers from the OS mapping backend:
     // 1 - 27700 roads
     // 4 - 3857 outdoor
-    AGSWMTSLayerInfo *layerInfo = layerInfos[0];
+    AGSWMTSLayerInfo *layerInfo = layerInfos[1];
     AGSWMTSLayer *wmtsLayer = [wmtsInfo wmtsLayerWithLayerInfo:layerInfo andSpatialReference:nil];
     [self.mapView addMapLayer:wmtsLayer withName:@"wmts layer"];
 }

@@ -324,6 +324,7 @@
 				3D3802161C5B8769001240AE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
